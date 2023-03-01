@@ -16,7 +16,17 @@ namespace C_Sharp
         {
             Console.WriteLine(GetUnique(new int[] {2,2,1,1,3}));
         }
+        public static bool IsPangram(string str)
+        {
+            string Str = str;
+            char[] CharsEN = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
 
+            for (int i = 0; i < str.Length; i++) { Str.Remove(CharsEN[i]); }
+            char[] Symbols = Str.ToCharArray();
+            for (int i = 0; i < CharsEN.Length; i++)
+
+                    return true;
+        }
 
 
 
