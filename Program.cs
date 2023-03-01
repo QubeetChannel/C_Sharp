@@ -14,18 +14,47 @@ namespace C_Sharp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(GetUnique(new int[] {2,2,1,1,3}));
+            
+            string[] testArray = new string[] {"NORTH", "EAST", "SOUTH"};
+            dirReduc(testArray);
+            
         }
 
 
 
 
 
+        // НЕ РЕШЕНО
+        // https://www.codewars.com/kata/550f22f4d758534c1100025a
+        public static string[] dirReduc(string[] arr)
+        {
+            string[] str = { "hello", "world" };
+            int[] Way = { 0, 0 };
+            foreach (string i in arr) {
+                switch (i) {
+                    case "NORTH": Way[0] -= 1; break;
+                    case "SOUTH": Way[0] += 1; break;
+                    case "WEST": Way[1] -= 1; break;
+                    case "EAST": Way[1] += 1; break;
+            }}
+            foreach (int i in Way)
+            {
 
+            }
+            Console.Write($"{Way[0]}, {Way[1]} ");
+            return str;
+        }
+
+
+
+
+
+        // НЕ РЕШЕНО
+        // https://www.codewars.com/kata/545cedaa9943f7fe7b000048
         public static bool IsPangram(string str)
         {
             string Str = str;
-            char[] CharsEN = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
+            char[] CharsEN = "abcdefghijklmnopqrstuvwxyz".ToArray();
 
             for (int i = 0; i < str.Length; i++) { Str.Remove(CharsEN[i]); }
             char[] Symbols = Str.ToCharArray();
@@ -37,6 +66,9 @@ namespace C_Sharp
 
 
 
+
+        // НЕ РЕШЕНО
+        //
         public static int GetUnique(IEnumerable<int> numbers)
         {
             int num = 0;
@@ -55,6 +87,8 @@ namespace C_Sharp
 
 
 
+        // РЕШЕНО
+        // https://www.codewars.com/kata/5266876b8f4bf2da9b000362
         public static string Likes(string[] name)
         {
             switch (name.Length)
@@ -70,7 +104,8 @@ namespace C_Sharp
 
 
 
-
+        // НЕ РЕШЕНО
+        //
         public static int SumIntervals((int, int)[] intervals)
         {
             int sum = 0;
@@ -85,6 +120,8 @@ namespace C_Sharp
 
 
 
+        // РЕШЕНО
+        // https://www.codewars.com/kata/578553c3a1b8d5c40300037c
         public static int binaryArrayToNumber(int[] BinaryArray)
         {
             string num = "";
@@ -101,6 +138,8 @@ namespace C_Sharp
 
 
 
+        // РЕШЕНО
+        // https://www.codewars.com/kata/541c8630095125aba6000c00
         public static int DigitalRoot(long n)
         {
             while ($"{n}".Length > 1)
@@ -116,6 +155,8 @@ namespace C_Sharp
 
 
 
+        // РЕШЕНО
+        // https://www.codewars.com/kata/5287e858c6b5a9678200083c
         public static bool Narcissistic(int value)
         {
             double result = 0;
@@ -134,6 +175,8 @@ namespace C_Sharp
 
 
 
+        // РЕШЕНО
+        // https://www.codewars.com/kata/56269eb78ad2e4ced1000013
         public static long FindNextSquare(long num)
         {
             long i = (long)Math.Sqrt(num);
@@ -145,11 +188,12 @@ namespace C_Sharp
 
 
 
+        // РЕШЕНО
+        // https://www.codewars.com/kata/54ff3102c1bad923760001f3
         public static int GetVowelCount(string str)
         {
             return str.Count(i => "aeiou".Contains(i));
         }
-
     }
 }
 
