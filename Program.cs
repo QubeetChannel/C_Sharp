@@ -23,7 +23,7 @@ namespace C_Sharp
 
             for (int i = 0; i < str.Length; i++) { Str.Remove(CharsEN[i]); }
             char[] Symbols = Str.ToCharArray();
-            for (int i = 0; i < CharsEN.Length; i++) { }
+            for (int i = 0; i < CharsEN.Length; i++) { Console.WriteLine("asd"); }
 
             return true;
         }
