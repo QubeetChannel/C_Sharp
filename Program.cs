@@ -31,7 +31,10 @@ namespace C_Sharp
                     case "WEST": Way[1] -= 1; break;
                     case "EAST": Way[1] += 1; break;
             }}
+            foreach (int i in Way)
+            {
 
+            }
             Console.Write($"{Way[0]}, {Way[1]} ");
             return str;
         }
