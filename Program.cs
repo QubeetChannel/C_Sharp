@@ -14,9 +14,27 @@ namespace C_Sharp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(GetUnique(new int[] {2,2,1,1,3}));
+            
+            string[] testArray = new string[] {"NORTH", "EAST", "SOUTH"};
+            dirReduc(testArray);
+            
         }
 
+        public static string[] dirReduc(string[] arr)
+        {
+            string[] str = { "hello", "world" };
+            int[] Way = { 0, 0 };
+            foreach (string i in arr) {
+                switch (i) {
+                    case "NORTH": Way[0] -= 1; break;
+                    case "SOUTH": Way[0] += 1; break;
+                    case "WEST": Way[1] -= 1; break;
+                    case "EAST": Way[1] += 1; break;
+            }}
+
+            Console.Write($"{Way[0]}, {Way[1]} ");
+            return str;
+        }
 
 
 
@@ -25,7 +43,7 @@ namespace C_Sharp
         public static bool IsPangram(string str)
         {
             string Str = str;
-            char[] CharsEN = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
+            char[] CharsEN = "abcdefghijklmnopqrstuvwxyz".ToArray();
 
             for (int i = 0; i < str.Length; i++) { Str.Remove(CharsEN[i]); }
             char[] Symbols = Str.ToCharArray();
