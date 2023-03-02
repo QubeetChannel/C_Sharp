@@ -37,6 +37,7 @@ namespace C_Sharp
                     case "WEST": Way[1] -= 1; break;
                     case "EAST": Way[1] += 1; break;
             }}
+            string[] FinalWay;
             foreach (int i in Way)
             {
 
@@ -68,19 +69,15 @@ namespace C_Sharp
 
 
         // НЕ РЕШЕНО
-        //
-        public static int GetUnique(IEnumerable<int> numbers)
+        // https://www.codewars.com/kata/52b7ed099cdc285c300001cd
+        public static int SumIntervals((int, int)[] intervals)
         {
-            int num = 0;
-            int[] Numbers = numbers.ToArray();
-            for (int i = 0; i < Numbers.Count(); i++)
+            int sum = 0;
+            foreach ((int, int) tuple in intervals)
             {
-                
+                sum += Math.Abs(tuple.Item2 - tuple.Item1);
             }
-            
-            return num;
-
-
+            return sum;
         }
 
 
@@ -104,22 +101,7 @@ namespace C_Sharp
 
 
 
-        // НЕ РЕШЕНО
-        //
-        public static int SumIntervals((int, int)[] intervals)
-        {
-            int sum = 0;
-            foreach ((int, int) tuple in intervals)
-            {
-                sum += Math.Abs(tuple.Item2 - tuple.Item1);
-            }
-            return sum;
-        }
-
-
-
-
-
+        
         // РЕШЕНО
         // https://www.codewars.com/kata/578553c3a1b8d5c40300037c
         public static int binaryArrayToNumber(int[] BinaryArray)
