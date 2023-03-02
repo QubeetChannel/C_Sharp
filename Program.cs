@@ -5,6 +5,7 @@ using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
@@ -14,12 +15,38 @@ namespace C_Sharp
     {
         static void Main(string[] args)
         {
-            
-            string[] testArray = new string[] {"NORTH", "EAST", "SOUTH"};
-            dirReduc(testArray);
+
+            /*string[] testArray = new string[] {"NORTH", "EAST", "SOUTH"};
+            dirReduc(testArray);*/
+            Console.WriteLine(sqInRect(5,3));
             
         }
 
+
+
+
+
+        // РЕШЕНО
+        // https://www.codewars.com/kata/55466989aeecab5aac00003e
+        public static List<int> sqInRect(int lng, int wdth)
+        {
+            List<int> result = new List<int> { };
+
+            if (lng != wdth)
+            {
+                int[] Array = {lng, wdth};
+                while (Array[0] != 0 && Array[1] != 0) 
+                {
+                    int min = Math.Min(Array[0], Array[1]);
+                    Array[0] = Math.Max(Array[0], Array[1]) - min;
+                    Array[1] = min;
+                    result.Add(min);
+                }
+                return result;
+            }
+            return null;
+        }
+        
 
 
 
@@ -37,9 +64,12 @@ namespace C_Sharp
                     case "WEST": Way[1] -= 1; break;
                     case "EAST": Way[1] += 1; break;
             }}
-            foreach (int i in Way)
+            for (int i = 0; i < Way.Length; i++)
             {
+                while (Way[i] != 0)
+                {
 
+                }
             }
             Console.Write($"{Way[0]}, {Way[1]} ");
             return str;
@@ -104,6 +134,7 @@ namespace C_Sharp
 
 
 
+
         // НЕ РЕШЕНО
         //
         public static int SumIntervals((int, int)[] intervals)
@@ -133,11 +164,11 @@ namespace C_Sharp
         {
             return Convert.ToInt32(string.Join("", BinaryArray), 2);
         }
-
-
-
-
-
+        
+        
+        
+        
+        
         // РЕШЕНО
         // https://www.codewars.com/kata/541c8630095125aba6000c00
         public static int DigitalRoot(long n)
