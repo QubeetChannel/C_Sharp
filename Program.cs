@@ -23,6 +23,17 @@ namespace C_Sharp
 
 
         // НЕ РЕШЕНО
+        // https://www.codewars.com/kata/55c45be3b2079eccff00010f
+        public static string Order(string words)
+        {
+            throw new NotImplementedException();
+        }
+
+
+
+
+
+        // НЕ РЕШЕНО
         // https://www.codewars.com/kata/550f22f4d758534c1100025a
         public static string[] dirReduc(string[] arr)
         {
