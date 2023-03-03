@@ -16,37 +16,8 @@ namespace C_Sharp
         static void Main(string[] args)
         {
 
-            /*string[] testArray = new string[] {"NORTH", "EAST", "SOUTH"};
-            dirReduc(testArray);*/
-            Console.WriteLine(sqInRect(5,3));
-            
         }
 
-
-
-
-
-        // РЕШЕНО
-        // https://www.codewars.com/kata/55466989aeecab5aac00003e
-        public static List<int> sqInRect(int lng, int wdth)
-        {
-            List<int> result = new List<int> { };
-
-            if (lng != wdth)
-            {
-                int[] Array = {lng, wdth};
-                while (Array[0] != 0 && Array[1] != 0) 
-                {
-                    int min = Math.Min(Array[0], Array[1]);
-                    Array[0] = Math.Max(Array[0], Array[1]) - min;
-                    Array[1] = min;
-                    result.Add(min);
-                }
-                return result;
-            }
-            return null;
-        }
-        
 
 
 
@@ -80,24 +51,6 @@ namespace C_Sharp
 
 
         // НЕ РЕШЕНО
-        // https://www.codewars.com/kata/545cedaa9943f7fe7b000048
-        public static bool IsPangram(string str)
-        {
-            string Str = str;
-            char[] CharsEN = "abcdefghijklmnopqrstuvwxyz".ToArray();
-
-            for (int i = 0; i < str.Length; i++) { Str.Remove(CharsEN[i]); }
-            char[] Symbols = Str.ToCharArray();
-            for (int i = 0; i < CharsEN.Length; i++) { Console.WriteLine("asd"); }
-
-            return true;
-        }
-
-
-
-
-
-        // НЕ РЕШЕНО
         //
         public static int GetUnique(IEnumerable<int> numbers)
         {
@@ -117,6 +70,65 @@ namespace C_Sharp
 
 
 
+        // НЕ РЕШЕНО
+        // https://www.codewars.com/kata/52b7ed099cdc285c300001cd
+        public static int SumIntervals((int, int)[] intervals)
+        {
+            int sum = 0;
+            foreach ((int, int) tuple in intervals)
+            {
+                sum += Math.Abs(tuple.Item2 - tuple.Item1);
+            }
+            return sum;
+        }
+
+
+
+
+
+        // РЕШЕНО
+        // https://www.codewars.com/kata/545cedaa9943f7fe7b000048
+        public static bool IsPangram(string str)
+        {
+            char[] CharsEN = "abcdefghijklmnopqrstuvwxyz".ToArray();
+
+            foreach (char C in CharsEN)
+            {
+                if (str.Contains(C) || str.Contains(char.ToUpper(C))) { continue; }
+                return false;
+            }
+            return true;
+        }
+
+
+
+
+
+        // РЕШЕНО
+        // https://www.codewars.com/kata/55466989aeecab5aac00003e
+        public static List<int> sqInRect(int lng, int wdth)
+        {
+            List<int> result = new List<int> { };
+
+            if (lng != wdth)
+            {
+                int[] Array = { lng, wdth };
+                while (Array[0] != 0 && Array[1] != 0)
+                {
+                    int min = Math.Min(Array[0], Array[1]);
+                    Array[0] = Math.Max(Array[0], Array[1]) - min;
+                    Array[1] = min;
+                    result.Add(min);
+                }
+                return result;
+            }
+            return null;
+        }
+
+
+
+
+
         // РЕШЕНО
         // https://www.codewars.com/kata/5266876b8f4bf2da9b000362
         public static string Likes(string[] name)
@@ -127,24 +139,8 @@ namespace C_Sharp
                 case 1: return $"{name[0]} likes this";
                 case 2: return $"{name[0]} and {name[1]} like this";
                 case 3: return $"{name[0]}, {name[1]} and {name[2]} like this";
-                default: return $"{name[0]}, {name[1]} and {name.Length-2} others like this";
+                default: return $"{name[0]}, {name[1]} and {name.Length - 2} others like this";
             }
-        }
-
-
-
-
-
-        // НЕ РЕШЕНО
-        //
-        public static int SumIntervals((int, int)[] intervals)
-        {
-            int sum = 0;
-            foreach ((int, int) tuple in intervals)
-            {
-                sum += Math.Abs(tuple.Item2 - tuple.Item1);
-            }
-            return sum;
         }
 
 
@@ -164,11 +160,11 @@ namespace C_Sharp
         {
             return Convert.ToInt32(string.Join("", BinaryArray), 2);
         }
-        
-        
-        
-        
-        
+
+
+
+
+
         // РЕШЕНО
         // https://www.codewars.com/kata/541c8630095125aba6000c00
         public static int DigitalRoot(long n)
