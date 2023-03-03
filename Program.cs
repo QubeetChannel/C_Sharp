@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
 using System.Globalization;
@@ -26,8 +27,19 @@ namespace C_Sharp
         // https://www.codewars.com/kata/5679aa472b8f57fb8c000047
         public static int FindEvenIndex(int[] arr)
         {
+            
             for (int i = 0; i < arr.Length; i++)
             {
+                
+                
+                
+                arr.Reverse();
+                arr.GetEnumerator();
+                
+                if (1 == 1)
+                {
+
+                }
                 // берешь индекс, сравниваешь сумму слева и сумму справа, кажется есть функция суммы для этого
             }
             return 1;
