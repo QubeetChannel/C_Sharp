@@ -23,10 +23,36 @@ namespace C_Sharp
 
 
         // НЕ РЕШЕНО
+        // https://www.codewars.com/kata/5679aa472b8f57fb8c000047
+        public static int FindEvenIndex(int[] arr)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                // берешь индекс, сравниваешь сумму слева и сумму справа, кажется есть функция суммы для этого
+            }
+            return 1;
+        }
+
+
+
+
+
+        // НЕ РЕШЕНО
+        // https://www.codewars.com/kata/54b42f9314d9229fd6000d9c
+        public static string DuplicateEncode(string word)
+        {
+            return word;
+        }
+
+
+
+
+
+        // НЕ РЕШЕНО
         // https://www.codewars.com/kata/55c45be3b2079eccff00010f
         public static string Order(string words)
         {
-            throw new NotImplementedException();
+            return words;
         }
 
 
@@ -103,11 +129,9 @@ namespace C_Sharp
         {
             char[] CharsEN = "abcdefghijklmnopqrstuvwxyz".ToArray();
 
-            foreach (char C in CharsEN)
-            {
+            foreach (char C in CharsEN) {
                 if (str.Contains(C) || str.Contains(char.ToUpper(C))) { continue; }
-                return false;
-            }
+                return false; }
             return true;
         }
 
