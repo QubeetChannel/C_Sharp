@@ -15,7 +15,9 @@ namespace C_Sharp
     {
         static void Main(string[] args)
         {
-
+            List<int> Li = new List<int> { 1,2,3,4,5,6,7,8,9,10};
+            List<int> NewList = GetRange(Li, 3, 6);
+            foreach (int i in NewList) { Console.WriteLine(i); }
         }
 
 
@@ -31,6 +33,12 @@ namespace C_Sharp
                 // берешь индекс, сравниваешь сумму слева и сумму справа, кажется есть функция суммы для этого
             }
             return 1;
+        }
+        public static List<int> GetRange(List<int> List, int start, int end)
+        {
+            List<int> newList = new List<int> { };
+            for (int i = start-1; i <= end-1; i++) { newList.Add(List[i]); }
+            return newList;
         }
 
 
